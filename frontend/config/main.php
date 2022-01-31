@@ -8,8 +8,14 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'report' => [
+            'class' => frontend\modules\report\Module::class,
+        ],
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -20,6 +26,7 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+            'returnUrl' => '/report/monthly-report/create',
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend

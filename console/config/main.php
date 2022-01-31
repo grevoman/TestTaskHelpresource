@@ -25,6 +25,7 @@ return [
             'class' => 'yii\console\controllers\MigrateController',
             'migrationNamespaces' => [
                 'console\modules\company\migrations',
+                'console\modules\reportForm\migrations',
             ],
         ],
     ],

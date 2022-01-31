@@ -9,5 +9,13 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+    ],
+    'container' => [
+        'definitions' => [
+            \yii\validators\StringValidator::class => \common\validators\StringValidator::class,
+        ],
     ],
 ];

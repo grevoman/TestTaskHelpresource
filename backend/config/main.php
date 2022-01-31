@@ -9,11 +9,19 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'language' => 'ru-RU',
     'homeUrl' => '/admin',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'company' => [
+            'class' => backend\modules\company\Module::class,
+        ],
+        'reportForm' => [
+            'class' => backend\modules\reportForm\Module::class,
+        ],
+    ],
     'components' => [
         'request' => [
             'baseUrl' => '/admin',
